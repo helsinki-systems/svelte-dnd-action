@@ -113,7 +113,9 @@ function unWatchDraggedElement() {
         dz.removeEventListener(DRAGGED_OVER_INDEX_EVENT_NAME, handleDraggedIsOverIndex);
     }
     window.removeEventListener(DRAGGED_LEFT_DOCUMENT_EVENT_NAME, handleDrop);
-    multiScroller.destroy();
+    if (multiScroller) {
+      multiScroller.destroy();
+    }
     multiScroller = undefined;
     unobserve();
 }
